@@ -1,0 +1,68 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* If the screen size is 601px or more, set the font-size of <div> to 80px */
+@media only screen and (min-width: 601px) {
+    :host {
+      font-size: 14px;
+    }
+  }
+  
+  /* If the screen size is 600px or less, set the font-size of <div> to 30px */
+  @media only screen and (max-width: 600px) {
+
+    :host  {
+      transform: scale(50%);
+      font-size: 8px;
+    }
+  }
+
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .appLogo {
+    flex: 1;
+    max-width: 10%;
+    height: auto;
+    margin: 2rem auto;
+  }
+
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2.5rem;
+    background-color: #000;
+    color: white;
+    cursor: default;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2.5rem;
+    background-color: #000;
+  }
+
+  .footer div {
+    color: #ffffff;
+    margin: 0 1rem;
+  }
+  .footer div:hover {
+    opacity: 80%;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
