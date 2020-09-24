@@ -1,72 +1,125 @@
-
 :host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .example-spacer {
-    flex: 1 1 auto;
-  }
+.homePageContainer{
+  display: flex; 
+  flex-direction: column;
+}
 
-  .center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7%;
+  width: auto;
+  background-color: #000;
+  color: white;
+  cursor: default;
+}
 
-  .appLogo {
-    flex: 1;
-    max-width: 10%;
-    height: auto;
-    margin: 2rem auto;
-  }
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7%;
+  width: auto;
 
-  .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2.5rem;
-    background-color: #000;
-    color: white;
-    cursor: default;
-  }
-
-  .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2.5rem;
-    background-color: #000;
-  }
-
-  .footer div {
+  background-color: #000;
+  div {
     color: #ffffff;
     margin: 0 1rem;
   }
-  .footer div:hover {
+  div:hover {
     opacity: 80%;
     text-decoration: underline;
     cursor: pointer;
   }
+}
 
-  @media only screen and (min-width: 601px) {
-    :host {
-      font-size: 14px;
-    }
+.subHeader {
+  height: auto;
+  margin: 2.5rem; 
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  ::ng-deep {
+      .mat-form-field-wrapper.ng-tns-c30-0 {
+        width: 50% !important;
   }
-  
-  @media only screen and (max-width: 600px) {
+  }
 
-    :host  {
-      transform: scale(50%);
-      font-size: 8px;
-    }
+  .searchField {
+    flex: 1;
+
   }
-  
+  .appLogo {
+    flex: 1;
+    max-width: 10%;
+    height: auto;
+  }
+  .authContainer {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 851px) {
+  :host {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+
+  :host {
+    font-size: 8px;
+  }
+
+  .mat-icon { 
+    transform: scale(0.75);
+  }
+
+  .mat-button{
+    font-size: 8px;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .footer div {
+    margin: 0.5rem 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .mat-button{
+    font-size: 5px;
+  }
+  .mat-icon { 
+    transform: scale(0.5);
+  }
+
+}
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}

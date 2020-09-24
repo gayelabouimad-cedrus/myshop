@@ -1,21 +1,57 @@
-<div style="display: flex; flex-direction: column;" class="unicorn-dark-theme">
-  <div class="header center" role="banner">
+<div class="homePageContainer">
+
+  <div class="header" role="banner">
     ✔️ 100% GENUINE PRODUCTS | PAY CASH OR CARD ON FREE DELIVERY 🚚
   </div>
-  
-  <img src="../assets/logo_transparent.png" class="appLogo"/>
-  
-  <p>
-    <mat-toolbar color="">
-      <mat-icon>menu</mat-icon>
+
+  <div class="subHeader">
+
+    <!-- SEARCH BAR -->
+    <mat-form-field class="searchField">
+      <button mat-button matPrefix mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+      <mat-label>Search</mat-label>
+      <input matInput type="text" [(ngModel)]="value" style="width: 15em;">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- APP LOGO -->
+    <img src="../assets/logo_transparent.png" class="appLogo" />
+
+    <!-- LOGIN - SIGN UP -->
+    <div class="authContainer">
+      <button mat-button color="primary">
+        <mat-icon class="mr">login</mat-icon>
+        <span>Login</span>
+      </button>
+      Or
+      <button mat-button color="accent">
+        <mat-icon class="mr">login</mat-icon>
+        <span>Sign Up</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- <mat-toolbar color="primary">
+    <mat-icon>menu</mat-icon>
     <span>My App</span>
     <span class="example-spacer"></span>
-      <mat-icon>favorite</mat-icon>
-     <mat-icon>share</mat-icon>
-  </mat-toolbar>
-  </p>
+    <mat-slide-toggle [checked]="isChecked" (change)="tooog($event)">Dark</mat-slide-toggle>
+  </mat-toolbar> -->
 
-  <div class="footer center">
+  <mat-toolbar fxLayout="row" color="primary">
+    <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
+      [fxShow.sm]="item.showOnTablet">
+      <mat-icon class="mr">{{item.icon}}</mat-icon>
+      {{item.label}}
+    </button>
+  </mat-toolbar>
+
+
+  <div class="footer">
     <div>
       About us
     </div>
@@ -32,6 +68,5 @@
       © 1997-2020, myshop.com, Inc. or its affiliates
     </div>
   </div>
-  hellow rold
-  
+
 </div>
