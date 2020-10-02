@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Swiper, SwiperOptions } from 'swiper';
-import 'swiper/swiper-bundle.css';
+
+import * as Swiper from 'swiper/dist/js/swiper.js';
 
 @Component({
   selector: 'app-home',
@@ -17,13 +17,15 @@ export class HomeComponent implements OnInit {
     this.swiper = new Swiper('.swiper-container', {
       speed: 400,
       spaceBetween: 100,
-      slidesPerView: 1,
-      // Optional parameters
+      slidesPerView: 'auto',
       loop: true,
-  
       // If we need pagination
       pagination: {
         el: '.swiper-pagination',
+        type: 'bullets',
+        bulletElement: 'span',
+        progressbarFillClass: 'swiper-pagination-progressbar-fill',
+        clickable: true,
       }
     });
   }
