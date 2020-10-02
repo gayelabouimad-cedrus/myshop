@@ -1,6 +1,5 @@
 :host {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
   color: #333;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -20,7 +19,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 7%;
+  height: 5%;
   width: auto;
   background-color: #000;
   color: white;
@@ -35,7 +34,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 7%;
+  height: 5%;
   width: auto;
 
   background-color: #000;
@@ -49,6 +48,14 @@
     cursor: pointer;
   }
 }
+::ng-deep {
+  .mat-form-field-wrapper {
+    width: 50% !important;
+  }
+  .mat-slide-toggle-bar {
+    background-color: rgba(255, 255, 255, 0.38) !important;
+  }
+}
 
 .subHeader {
   height: auto;
@@ -57,12 +64,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  ::ng-deep {
-      .mat-form-field-wrapper.ng-tns-c30-0 {
-        width: 50% !important;
-  }
-  }
-
   .searchField {
     flex: 1;
 
@@ -71,7 +72,7 @@
     flex: 1;
     max-width: 10%;
     height: auto;
-  }
+}
   .authContainer {
     display: flex;
     flex: 1;
@@ -119,7 +120,16 @@
 
 }
 
-
 .example-spacer {
   flex: 1 1 auto;
+}
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  height: 100%;
+}
+mat-sidenav {
+  width: 250px;
+}
+main {
+  padding: 10px;
 }

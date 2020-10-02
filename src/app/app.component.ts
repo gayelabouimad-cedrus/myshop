@@ -16,21 +16,21 @@ export class AppComponent {
       label: 'Men',
       icon: 'sports_soccer',
       showOnMobile: false,
-      showOnTablet: false,
+      showOnTablet: true,
       showOnDesktop: true
     },
     {
       label: 'Women',
       icon: 'sports_soccer',
       showOnMobile: false,
-      showOnTablet: false,
+      showOnTablet: true,
       showOnDesktop: true
     },
     {
       label: 'Kids',
       icon: 'sports_soccer',
       showOnMobile: false,
-      showOnTablet: false,
+      showOnTablet: true,
       showOnDesktop: true
     },
     {
@@ -53,14 +53,7 @@ export class AppComponent {
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: true
-    },
-    {
-      label: 'About Us',
-      icon: 'help',
-      showOnMobile: false,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
+    }
 
   ];
 

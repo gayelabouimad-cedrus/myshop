@@ -1,72 +1,75 @@
-<div class="homePageContainer">
-
-  <div class="header" role="banner">
-    ✔️ 100% GENUINE PRODUCTS | PAY CASH OR CARD ON FREE DELIVERY 🚚
-  </div>
-
-  <div class="subHeader">
-
-    <!-- SEARCH BAR -->
-    <mat-form-field class="searchField">
-      <button mat-button matPrefix mat-icon-button>
-        <mat-icon>search</mat-icon>
-      </button>
-      <mat-label>Search</mat-label>
-      <input matInput type="text" [(ngModel)]="value" style="width: 15em;">
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
-
-    <!-- APP LOGO -->
-    <img src="../assets/logo_transparent.png" class="appLogo" />
-
-    <!-- LOGIN - SIGN UP -->
-    <div class="authContainer">
-      <button mat-button color="primary">
-        <mat-icon class="mr">login</mat-icon>
-        <span>Login</span>
-      </button>
-      Or
-      <button mat-button color="accent">
-        <mat-icon class="mr">login</mat-icon>
-        <span>Sign Up</span>
-      </button>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <!--this is a place for us to add side-nav code-->
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="homePageContainer">
+      <div class="header" role="banner">
+        <div>
+          ✔️ 100% GENUINE PRODUCTS | PAY CASH OR CARD ON FREE DELIVERY 🚚
+        </div>
+        <mat-slide-toggle [checked]="isChecked" class="toggle" (change)="tooog($event)" style="position: absolute; right: 2em;" >Dark</mat-slide-toggle>
+      </div>
+    
+      <div class="subHeader">
+    
+        <!-- SEARCH BAR -->
+        <mat-form-field class="searchField">
+          <button mat-button matPrefix mat-icon-button>
+            <mat-icon>search</mat-icon>
+          </button>
+          <mat-label>Search</mat-label>
+          <input matInput type="text" [(ngModel)]="value" style="width: 15em;">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+    
+        <!-- APP LOGO -->
+        <img src="../assets/logo_transparent.png" class="appLogo" />
+    
+        <!-- LOGIN - SIGN UP -->
+        <div class="authContainer">
+          <button mat-button color="primary">
+            <mat-icon class="mr">login</mat-icon>
+            <span>Login</span>
+          </button>
+          Or
+          <button mat-button>
+            <mat-icon class="mr">login</mat-icon>
+            <span>Sign Up</span>
+          </button>
+        </div>
+      </div>
+    
+      <mat-toolbar fxLayout="row" color="primary">
+        <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
+          [fxShow.sm]="item.showOnTablet" (click)="sidenav.toggle()">
+          <mat-icon class="mr">{{item.icon}}</mat-icon>
+          {{item.label}}
+        </button>
+      </mat-toolbar>
+    
+    <router-outlet></router-outlet>
+    
+      <div class="footer">
+        <div>
+          About us
+        </div>
+        <div>
+          Privacy Policy
+        </div>
+        <div>
+          Delivery Terms
+        </div>
+        <div>
+          Terms & Conditions
+        </div>
+        <div>
+          © 1997-2020, myshop.com, Inc. or its affiliates
+        </div>
+      </div>
+    
     </div>
-  </div>
-
-  <!-- <mat-toolbar color="primary">
-    <mat-icon>menu</mat-icon>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <mat-slide-toggle [checked]="isChecked" (change)="tooog($event)">Dark</mat-slide-toggle>
-  </mat-toolbar> -->
-
-  <mat-toolbar fxLayout="row" color="primary">
-    <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
-      [fxShow.sm]="item.showOnTablet">
-      <mat-icon class="mr">{{item.icon}}</mat-icon>
-      {{item.label}}
-    </button>
-  </mat-toolbar>
-
-
-  <div class="footer">
-    <div>
-      About us
-    </div>
-    <div>
-      Privacy Policy
-    </div>
-    <div>
-      Delivery Terms
-    </div>
-    <div>
-      Terms & Conditions
-    </div>
-    <div>
-      © 1997-2020, myshop.com, Inc. or its affiliates
-    </div>
-  </div>
-
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

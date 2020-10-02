@@ -17,10 +17,13 @@ import { FormsModule } from '@angular/forms';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
+    AppRoutingModule,
+  ],
+  exports: [
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
