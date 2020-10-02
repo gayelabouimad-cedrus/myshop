@@ -9,11 +9,17 @@
 
 .my-light-theme {
   @include angular-material-theme($myshop-theme);
+  .appLogo {
+    background-color: mat-color($myshop-primary);
+  }
 }
 
 .my-dark-theme {
   @include angular-material-theme($dark-theme);
   background-color: darken($color: #000000, $amount: 0);
+  .appLogo {
+    background-color: mat-color($dark-primary);
+  }
 }
 
 html, body { height: 100%;}
